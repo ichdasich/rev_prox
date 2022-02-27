@@ -58,6 +58,7 @@ SITES = {
 	'www.bbc.com': {
 		'www.bbc.com': '',
 		'gn-web-assets.api.bbc.com':'',
+		'm.files.bbci.co.uk':'',
 		'a1.api.bbc.co.uk': '',
 		'bbc.co.uk': '',
 		'www.bbc.co.uk':'',
@@ -65,13 +66,13 @@ SITES = {
 		'ichef.bbc.co.uk':'',
 		'idcta.api.bbc.co.uk':'',
 		'mybbc.files.bbci.co.uk':'',
-		'bbci.co.uk':'',
 		'static.bbci.co.uk':'',
 		'static.files.bbci.co.uk': '',
 		'nav.files.bbci.co.uk':'',
 		'static.chartbeat.com':'',
 		'ping.chartbeat.net':'',
 		'cdn.optimizely.com':'',
+		'bbci.co.uk':'',
 		'bbc.com':'',
 	},
 ### Sites not yet working OOTB, needing further debugging
