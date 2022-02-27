@@ -151,9 +151,6 @@ for s in SITES:
 nginx_conf.close()
 
 idx = open('./index.html','w+')
-idx.write('<p>We are network admins, to us data is just protocol overhead</p>\n')
-idx.write('</br>\n')
-idx.write('</br>\n')
 idx.write('<p style="color:#FF0000;">\n')
 idx.write('<h3 style="color:#FF0000;">WARNING: This service is for censorship circumvention and breaks encryption.</h3>\n')
 idx.write('<h3 align="center">         DO NOT LOG INTO ANY SITES ACCESSIBLE VIA THIS SERVICE!</h3>\n')
@@ -170,6 +167,9 @@ idx.write('</br>')
 idx.write('</br>')
 idx.write('</br>')
 idx.write('See <a href="https://github.com/ichdasich/rev_prox">https://github.com/ichdasich/rev_prox</a> to setup your own reverse proxy.')
+idx.write('<p style="color:#FFFFFF;">We are network admins, to us data is just protocol overhead</p>\n')
+idx.write('</br>\n')
+idx.write('</br>\n')
 
 
 idx.close()
