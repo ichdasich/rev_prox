@@ -155,6 +155,12 @@ idx.write('</br>')
 idx.write('</br>')
 for s in SITES:
 	idx.write('Site: {site} - <a href="https://{url}/">{url}</a></br>\n'.format(site=s, url=SITES[s][s]))
+idx.write('</br>')
+idx.write('</br>')
+idx.write('</br>')
+idx.write('</br>')
+idx.write('See <a href="https://github.com/ichdasich/rev_prox">https://github.com/ichdasich/rev_prox</a> to setup your own reverse proxy.')
+
 
 idx.close()
 
