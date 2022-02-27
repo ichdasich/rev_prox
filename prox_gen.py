@@ -37,6 +37,15 @@ SITES = {
 		'donate.torproject.org': '',
 		'dist.torproject.org': '',
 	},
+	'rsf.org': {
+		'rsf.org': '',
+		'www.rsf.org': '',
+		'hello.myfonts.net': '',
+		'cdnjs.cloudflare.com': '',
+		'code.jquery.com': '',
+		'script.hotjar.com': '',
+		'static.hotjar.com': '',
+	},
 ### Sites not yet working OOTB, needing further debugging
 #	'www.theguardian.com': {
 #		'www.theguardian.com': '',
@@ -104,6 +113,7 @@ server {{
 	ssl_ciphers  HIGH:!aNULL:!MD5:!RC4;
 	ssl_prefer_server_ciphers   on;
 	location / {{
+		proxy_ssl_server_name on;
 		proxy_pass https://{site}/;
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
