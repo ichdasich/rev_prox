@@ -57,6 +57,10 @@ SITES = {
 	},
 	'www.bbc.com': {
 		'www.bbc.com': '',
+		'ichef.bbci.co.uk': '',
+		'ychef.files.bbci.co.uk': '',
+		'mybbc-analytics.files.bbci.co.uk': '',
+		'c.files.bbci.co.uk': '',
 		'gn-web-assets.api.bbc.com':'',
 		'm.files.bbci.co.uk':'',
 		'a1.api.bbc.co.uk': '',
