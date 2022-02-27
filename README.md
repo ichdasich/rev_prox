@@ -107,6 +107,9 @@ These are then used to create a reverse proxy structure for the target.
 ## Things to improve
 This script is a quick hack. The nginx config is most likely crap. It does not
 work with many sites. What would be needed most:
+- Some translations of the index page might be nice to have
+- A small form field that allows you to put in a deep link from a proxied website to get the service link might be nice
+- Far too many resources are not yet proxied.
 - Add more sites and verify they are working. cnn,com, bbc,com etc... all make problems
 - Make the configuration better(tm)
 - Improve the documentation. I typed this down at 3:30 after far too many drinks, and i guess it shows.
