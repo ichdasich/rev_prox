@@ -151,6 +151,12 @@ for s in SITES:
 nginx_conf.close()
 
 idx = open('./index.html','w+')
+idx.write('<html>\n')
+idx.write('<head>\n')
+idx.write('<meta charset=utf-8>\n')
+idx.write('<title>Читать немецкие медиа</title>\n')
+idx.write('</head>\n')
+idx.write('<body>\n')
 idx.write('<p style="color:#FF0000;">\n')
 idx.write('<h3 align="center" style="color:#FF0000;">WARNING: This service is for censorship circumvention and breaks encryption.</h3>\n')
 idx.write('<h3 align="center">DO NOT LOG INTO ANY SITES ACCESSIBLE VIA THIS SERVICE! DO NOT ENTER ANY CREDENTIALS! THIS SERVICE DOES NOT PROVIDE ANONYMITY AGAINST LOCAL AUTHORITIES!</h3>\n')
@@ -161,7 +167,7 @@ idx.write('<h3 align="center">Не пытайтесь залогиниться �
 idx.write('<h5 align="center" style="color:#FF0000;">Вместо этого сервиса: используйте браузер Тор: <a href="https://www.torproject.org/">https://www.torproject.org/</a> (PROXY BELOW)</h5>\n')
 idx.write('<h3 align="center">- - - - - - - - - - - - - </h3>\n')
 idx.write('<p align="center">\n')
-idx.write('Читать западные медиа - Читать немецкие медиа - Читать дойче велле\n')
+idx.write('Читать западные медиа - Читать немецкие медиа - Читать дойче велле - Читать би-би-си - Читать гардиан\n')
 idx.write('</p>\n')
 idx.write('</br>\n')
 idx.write('</br>\n')
@@ -177,6 +183,8 @@ idx.write('See <a href="https://github.com/ichdasich/rev_prox">https://github.co
 idx.write('<p style="color:#FFFFFF;">We are network admins, to us data is just protocol overhead</p>\n')
 idx.write('</br>\n')
 idx.write('</br>\n')
+idx.write('</body>\n')
+idx.write('</html>\n')
 
 
 idx.close()
