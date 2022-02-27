@@ -83,6 +83,9 @@ SITES = {
 #		'abs-0.twimg.com': '',
 #		'abs.twimg.com': '',
 #		'pbs.twimg.com': '',
+#		'api.twitter.com': '',
+#		'ton.twitter.com': '',
+#		'analytics.twitter.com': '',
 #	}
 }
 
@@ -113,6 +116,9 @@ server {{
 	ssl_prefer_server_ciphers   on;
 	location / {{
 		proxy_ssl_server_name on;
+		proxy_busy_buffers_size   512k;
+		proxy_buffers   4 512k;
+		proxy_buffer_size   256k;
 		proxy_pass https://{site}/;
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
