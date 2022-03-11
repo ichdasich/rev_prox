@@ -40,6 +40,7 @@ SITES = {
 	'rsf.org': {
 		'rsf.org': '',
 		'www.rsf.org': '',
+		'helpdesk.rsf.org': '',
 		'hello.myfonts.net': '',
 		'cdnjs.cloudflare.com': '',
 		'code.jquery.com': '',
@@ -59,6 +60,7 @@ SITES = {
 		'www.bbc.com': '',
 		'ichef.bbci.co.uk': '',
 		'ychef.files.bbci.co.uk': '',
+		'search.bbc.co.uk': '',
 		'mybbc-analytics.files.bbci.co.uk': '',
 		'c.files.bbci.co.uk': '',
 		'gn-web-assets.api.bbc.com':'',
@@ -111,6 +113,7 @@ def get_site_config(main, site, sub):
 	head = """
 server {{
 	listen       443;
+	listen       [::]:443;
 	server_name  {sub};
 	root         /var/www/htdocs;
 	
