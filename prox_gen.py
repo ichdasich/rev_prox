@@ -41,6 +41,8 @@ SITES = {
 		'rsf.org': '',
 		'www.rsf.org': '',
 		'helpdesk.rsf.org': '',
+		'index.rsf.org': '',
+		'wiki.rsf.org': '',
 		'hello.myfonts.net': '',
 		'cdnjs.cloudflare.com': '',
 		'code.jquery.com': '',
@@ -155,12 +157,39 @@ server {{
 	
 	return head
 
+def get_sites():
+	if not os.path.isfile('./conf/'+DOM+'.conf'):
+		return {}
+	f = open('./conf/'+DOM+'.conf')
+	ret = {}
+	server = 0
+	site = ''
+	for l in f:
+			
+		if 'sub_filter ' in l:
+			n = l.strip().strip(';').split()
+			if server == 1 and not site in ret:
+				site = n[1].strip('"')
+				ret[site] = {}
+			ret[site][n[1].strip('"')] = n[-1].strip('"')
+			server += 1
+		if 'sub_filter_once off;' in l:
+			server = 0
+			site = ''
+		if 'proxy_set_header Accept-Encoding "";' in l:
+			server = 1
+	return ret
+
+d = get_sites()
 
 for s in SITES:
 	for name in SITES[s]:
-		SITES[s][name] = get_rand_site(name)
+		if name in d[s]:
+			SITES[s][name] = d[s][name]
+		else:
+			SITES[s][name] = get_rand_site(name)
 
-nginx_conf = open('./nginx-include.conf','w+')
+nginx_conf = open('./conf/'+DOM+'-nginx-include.conf','w+')
 for s in SITES:
 	for name in SITES[s]:
 		cfg = get_site_config(s, name, SITES[s][name])
@@ -168,7 +197,7 @@ for s in SITES:
 
 nginx_conf.close()
 
-idx = open('./index.html','w+')
+idx = open('./sites/'+DOM+'-index.html','w+')
 idx.write('<html>\n')
 idx.write('<head>\n')
 idx.write('<meta charset=utf-8>\n')

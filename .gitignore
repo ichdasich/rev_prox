@@ -1,3 +1,5 @@
 Makefile
 nginx-include.conf
 index.html
+sites/*html
+conf/*conf
